@@ -1,0 +1,10 @@
+name: testing
+on: 
+  push:
+    branches:
+       - main
+       - test
+       - more_test
+       #runs every 1st minute
+  schedule:
+      - cron: '*/1 * * * *' 
