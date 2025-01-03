@@ -2,20 +2,16 @@ name: TestWorkflow
 on:
   push:
     branches:
-    - main
-    workflow_dispatch:
-
+            - main
+  workflow_dispatch:
 jobs:
   TestWorkFlow:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hi There!"
-
       - name: Checkout
         uses: actions/checkout@v4.2.2
-
       - name: List files in the repo
         run: |
-          echo: "The repo ${{ github.repository }} contains the following files"
-          tree
+              echo: "The repo ${{ github.repository }} contains the following files" tree
     
