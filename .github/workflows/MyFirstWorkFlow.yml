@@ -4,17 +4,37 @@ on:
       branches: 
               - main
     workflow_dispatch:
-jobs:
-    MyFirstJob:
-        runs-on: ubuntu-latest
+        inputs:
+            homedrive:
+                description: 'THe home drive on the machine'
+                required: true
+            logLevel:
+                description: 'Log level'
+                default: 'warning'
+                type: choice
+                options:
+                    - info
+                    - warning
+                    - debug
+            tag:
+                description: 'Apply tag after successfull test run'
+                required: true
+                type: boolean
+            enviroment:
+                description: 'Env to run tests against'
+                type: environment
+                required: true
+# jobs:
+#     MyFirstJob:
+#         runs-on: ubuntu-latest
 
-        steps:
-          - run: echo "Hi There World!"
-          - name: Checkout
-            uses: actions/checkout@v4.2.2
-          - name: LIst file in repositoruy
-            run: | 
-                    echo "The repository ${{ github.repository }} contains the follwoing file:" tree
+#         steps:
+#           - run: echo "Hi There World!"
+#           - name: Checkout
+#             uses: actions/checkout@v4.2.2
+#           - name: LIst file in repositoruy
+#             run: | 
+#                     echo "The repository ${{ github.repository }} contains the follwoing file:" tree
                             
 
     
