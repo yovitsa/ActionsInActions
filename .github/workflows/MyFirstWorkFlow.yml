@@ -22,7 +22,7 @@ on:
                 type: boolean
             enviroment:
                 description: 'Env to run tests against'
-                type: environment
+                type: enviroment
                 required: true
 # jobs:
 #     MyFirstJob:
